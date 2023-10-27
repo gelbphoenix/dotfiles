@@ -58,10 +58,10 @@ fi
 
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1=$'\n\[\e[38;5;244m\]\u256D\u2500\u2500\[\e[38;5;197m\] ( \u ) \[\e[38;5;244m\]\u2500\[\e[38;5;199m\] [ \W ]$(__git_ps1 " \[\e[38;5;244m\]\u2500\[\e[38;5;196m\] < %s > ")\[\e[38;5;244m\]\n\u2570\u2500\u2500\u2500\u2B9E\[\e[0m\] '
+    PS1=$'\n\[\e[38;5;244m\]\u256D\u2500\u2500\[\e[38;5;197m\] ( \u ) \[\e[38;5;244m\]\u2500\[\e[38;5;199m\] [ \W ]$(__git_ps1 " \[\e[38;5;244m\]\u2500\[\e[38;5;196m\] < %s > ")\[\e[38;5;244m\]\n\u2570\u2500\u2500\u2500\u2192\[\e[0m\] '
 else
    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-   PS1=$'\n\u256D\u2500\u2500 ( \u )\u2500 [ \W ]$(__git_ps1 " \u2500 < %s > ")\n\u2570\u2500\u2B9E '
+   PS1=$'\n\u256D\u2500\u2500 ( \u )\u2500 [ \W ]$(__git_ps1 " \u2500 < %s > ")\n\u2570\u2500\u2192 '
 fi
 unset color_prompt force_color_prompt
 
