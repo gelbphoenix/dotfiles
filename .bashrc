@@ -78,31 +78,13 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
-
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-#alias ll='ls -l'
-#alias la='ls -A'
-#alias l='ls -CF'
-alias list='ls -lACF'
 
 # Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# You may want to put all your additions into a separate file like ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f /home/phoenix/.bash_aliases ]; then
-    . /home/phoenix/.bash_aliases
-fi
+[ -f /home/phoenix/.bash_aliases ] && \. /home/phoenix/.bash_aliases
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -127,7 +109,3 @@ PATH=~/.console-ninja/.bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 [ -s "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
-
-# Flutter/Dart
-export PATH=$PATH:/usr/bin/flutter/bin
-[ -s /etc/bash_completion.d/flutter ] && \. /etc/bash_completion.d/flutter # Loads Flutter bash completions
