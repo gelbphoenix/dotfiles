@@ -12,6 +12,7 @@ alias ~='cd ~'
 # better system commands #
 alias apt='sudo nala'
 alias mkdir='mkdir -pv'
+alias rmdir='rm -rdv'
 
 # confirmations #
 alias mv='mv -i'
@@ -21,8 +22,10 @@ alias rm='rm -i'
 # commands with sudo #
 alias brctl='sudo brctl'
 
-# script commands #
+# kde commands #
+alias plasmareset='killall plasmashell; kstart plasmashell'
 
+# script commands #
 
 ### Functions ###
 up () {
