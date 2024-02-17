@@ -101,7 +101,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s /home/phoenix/.git-prompt.sh ] && \. /home/phoenix/.git-prompt.sh
+[ -s /home/phoenix/.git-prompt ] && \. /home/phoenix/.git-prompt
 
 PATH=~/.console-ninja/.bin:$PATH
 
@@ -109,3 +109,8 @@ PATH=~/.console-ninja/.bin:$PATH
 export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 [ -s "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
+
+# NVIDIA
+CUDA_PATH="/usr/local/cuda"
+PATH=$CUDA_PATH/bin:$PATH
+LD_LIBRARY_PATH=$CUDA_PATH/lib64
