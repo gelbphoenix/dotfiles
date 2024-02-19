@@ -84,7 +84,7 @@ fi
 # You may want to put all your additions into a separate file like ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-[ -f /home/phoenix/.bash_aliases ] && \. /home/phoenix/.bash_aliases
+[ -f $HOME/.bash_aliases ] && \. $HOME/.bash_aliases
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -101,9 +101,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s /home/phoenix/.git-prompt ] && \. /home/phoenix/.git-prompt
+[ -s "$HOME/.git-prompt" ] && \. "$HOME/.git-prompt"
 
-PATH=~/.console-ninja/.bin:$PATH
+PATH=$HOME/.console-ninja/.bin:$PATH
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -111,6 +111,8 @@ export PATH=$BUN_INSTALL/bin:$PATH
 [ -s "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
 
 # NVIDIA
-CUDA_PATH="/usr/local/cuda"
-PATH=$CUDA_PATH/bin:$PATH
-LD_LIBRARY_PATH=$CUDA_PATH/lib64
+if [ -d /usr/local/cuda ] ; then
+	CUDA_PATH="/usr/local/cuda"
+	PATH=$CUDA_PATH/bin:$PATH
+	LD_LIBRARY_PATH=$CUDA_PATH/lib64
+fi
