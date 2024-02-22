@@ -17,7 +17,7 @@ alias rmdir='rm -rdv'
 # confirmations #
 alias mv='mv -i'
 alias cp='cp -i'
-alias rm='rm -i'
+alias rm='rm -I'
 
 # commands with sudo #
 alias brctl='sudo brctl'
