@@ -11,6 +11,7 @@ alias ~='cd ~'
 
 # better system commands #
 alias apt='sudo apt'
+alias apt-update='apt update && apt upgrade'
 alias mkdir='mkdir -pv'
 alias rmdir='rm -rdv'
 
