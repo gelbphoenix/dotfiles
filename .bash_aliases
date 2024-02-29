@@ -10,7 +10,7 @@ alias list='ls -lACF'
 alias ~='cd ~'
 
 # better system commands #
-alias apt='sudo nala'
+alias apt='sudo apt'
 alias mkdir='mkdir -pv'
 alias rmdir='rm -rdv'
 
