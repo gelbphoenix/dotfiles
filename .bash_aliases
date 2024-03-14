@@ -10,8 +10,17 @@ alias list='ls -lACF'
 alias ~='cd ~'
 
 # better system commands #
-alias apt='sudo apt'
-alias apt-update='apt update && apt upgrade'
+if [ "$(lsb_release -si)" = "Debian" ]; then
+	if [ -x "$(command -v nala)" ]; then
+		alias apt='sudo nala'
+	else
+		alias apt='sudo apt'
+		alias apt-update='apt update && apt upgrade'
+	fi
+elif ["$(lsb_release -si)" = "Fedora"]; then
+	alias dnf='sudo dnf'
+fi
+
 alias mkdir='mkdir -pv'
 alias rmdir='rm -rdv'
 
@@ -21,7 +30,6 @@ alias cp='cp -i'
 alias rm='rm -I'
 
 # commands with sudo #
-alias brctl='sudo brctl'
 
 # kde commands #
 alias plasmareset='killall plasmashell; kstart plasmashell'
