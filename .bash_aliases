@@ -17,7 +17,7 @@ if [ "$(lsb_release -si)" = "Debian" ]; then
 		alias apt='sudo apt'
 		alias apt-update='apt update && apt upgrade'
 	fi
-elif ["$(lsb_release -si)" = "Fedora"]; then
+elif [ "$(lsb_release -si)" = "Fedora" ]; then
 	alias dnf='sudo dnf'
 fi
 
