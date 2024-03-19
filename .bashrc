@@ -103,7 +103,7 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "$HOME/.git-prompt" ] && \. "$HOME/.git-prompt"
 
-PATH=$HOME/.console-ninja/.bin:$PATH
+export PATH=$HOME/.console-ninja/.bin:$PATH
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
