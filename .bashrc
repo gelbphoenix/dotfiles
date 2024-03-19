@@ -99,17 +99,21 @@ if ! shopt -oq posix; then
 fi
 
 # node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+if [ -d $HOME/.nvm ]; then
+	export NVM_DIR="$HOME/.nvm"
+	. $NVM_DIR/nvm.sh
+	. $NVM_DIR/bash_completion
+fi
 
 # console-ninja
 [ -d $HOME/.console-ninja ] && export PATH="$HOME/.console-ninja/.bin:$PATH"
 
 # bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-[ -f "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
+if [ -d $HOME/.bun ]; then
+	export BUN_INSTALL="$HOME/.bun"
+	export PATH="$BUN_INSTALL/bin:$PATH"
+	[ -f "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
+fi
 
 # NVIDIA CUDA
 if [ -d /usr/local/cuda ]; then
