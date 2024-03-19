@@ -104,7 +104,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # console-ninja
-export PATH="$HOME/.console-ninja/.bin:$PATH"
+[ -d $HOME/.console-ninja ] && export PATH="$HOME/.console-ninja/.bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
