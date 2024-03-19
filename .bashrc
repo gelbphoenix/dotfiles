@@ -85,6 +85,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 [ -f $HOME/.bash_aliases ] && \. $HOME/.bash_aliases
+[ -f $HOME/.git-prompt ] && \. $HOME/.git-prompt
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -97,22 +98,29 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# node version manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-[ -s "$HOME/.git-prompt" ] && \. "$HOME/.git-prompt"
-
-export PATH=$HOME/.console-ninja/.bin:$PATH
+# console-ninja
+export PATH="$HOME/.console-ninja/.bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH=$BUN_INSTALL/bin:$PATH
-[ -s "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
+export PATH="$BUN_INSTALL/bin:$PATH"
+[ -f "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
 
-# NVIDIA
-if [ -d /usr/local/cuda ] ; then
-	CUDA_PATH="/usr/local/cuda"
-	PATH=$CUDA_PATH/bin:$PATH
-	LD_LIBRARY_PATH=$CUDA_PATH/lib64
+# NVIDIA CUDA
+if [ -d /usr/local/cuda ]; then
+	export CUDA_INSTALL="/usr/local/cuda"
+	export PATH="$CUDA_INSTALL/bin:$PATH"
+	export LD_LIBRARY_PATH="$CUDA_INSTALL/lib64"
+fi
+
+# Flutter
+if [ -d $HOME/.local/bin/flutter ]; then
+	export FLUTTER_INSTALL="$HOME/.local/bin/flutter"
+	export PATH="$PATH:$FLUTTER_INSTALL/bin"
+	[ -f "$FLUTTER_INSTALL/bash_completion" ] && \. "$FLUTTER_INSTALL/bash_completion"
 fi
