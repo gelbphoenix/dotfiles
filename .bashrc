@@ -126,5 +126,5 @@ fi
 if [ -d $HOME/.local/bin/flutter ]; then
 	export FLUTTER_INSTALL="$HOME/.local/bin/flutter"
 	export PATH="$PATH:$FLUTTER_INSTALL/bin"
-	[ -f "$FLUTTER_INSTALL/bash_completion" ] && \. "$FLUTTER_INSTALL/bash_completion"
+	[ -f "$HOME/.local/share/bash_completion/flutter" ] && \. "$HOME/.local/share/bash_completion/flutter"
 fi
