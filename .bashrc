@@ -112,7 +112,7 @@ fi
 if [ -d $HOME/.bun ]; then
 	export BUN_INSTALL="$HOME/.bun"
 	export PATH="$BUN_INSTALL/bin:$PATH"
-	[ -f "$BUN_INSTALL/completions" ] && \. "$BUN_INSTALL/completions/bun.completion.bash" # This loads the bun bash completions
+	[ -f "$HOME/.local/share/bash_completion/bun" ] && \. "$HOME/.local/share/bash_completion/bun" # This loads the bun bash completions
 fi
 
 # NVIDIA CUDA
