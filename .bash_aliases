@@ -35,6 +35,8 @@ alias rm='rm -I'
 alias plasmareset='killall plasmashell; kstart plasmashell'
 
 # script commands #
+alias start_frontcam='/bin/sh ~/.local/bin/front_cam.sh'
+alias start_backcam='/bin/sh ~/.local/bin/back_cam.sh'
 
 ### Functions ###
 up () {
