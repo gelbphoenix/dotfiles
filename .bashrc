@@ -100,7 +100,7 @@ fi
 
 # node version manager
 if [ -d $HOME/.nvm ]; then
-	export NVM_DIR="$HOME/.nvm"
+	NVM_DIR="$HOME/.nvm"
 	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
@@ -110,21 +110,13 @@ fi
 
 # bun
 if [ -d $HOME/.bun ]; then
-	export BUN_INSTALL="$HOME/.bun"
+	BUN_INSTALL="$HOME/.bun"
 	export PATH="$BUN_INSTALL/bin:$PATH"
 	[ -f "$HOME/.local/share/bash_completion/bun" ] && \. "$HOME/.local/share/bash_completion/bun" # This loads the bun bash completions
 fi
 
 # NVIDIA CUDA
 if [ -d /usr/local/cuda ]; then
-	export CUDA_INSTALL="/usr/local/cuda"
-	export PATH="$CUDA_INSTALL/bin:$PATH"
-	export LD_LIBRARY_PATH="$CUDA_INSTALL/lib64"
-fi
-
-# Flutter
-if [ -d $HOME/.local/bin/flutter ]; then
-	export FLUTTER_INSTALL="$HOME/.local/bin/flutter"
-	export PATH="$PATH:$FLUTTER_INSTALL/bin"
-	[ -f "$HOME/.local/share/bash_completion/flutter" ] && \. "$HOME/.local/share/bash_completion/flutter"
+	export PATH="/usr/local/cuda/bin:$PATH"
+	export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 fi
