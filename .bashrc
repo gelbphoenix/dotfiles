@@ -121,8 +121,5 @@ if [ -d /usr/local/cuda ]; then
 	export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 fi
 
-<<<<<<< HEAD
-=======
 # fzf
 [ -x "$(command -v fzf)" ] && eval "$(fzf --bash)"
->>>>>>> e8a5306 (Added fzf)
