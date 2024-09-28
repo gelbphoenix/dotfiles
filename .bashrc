@@ -98,6 +98,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # node version manager
 if [ -d $HOME/.nvm ]; then
 	NVM_DIR="$HOME/.nvm"
