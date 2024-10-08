@@ -7,7 +7,7 @@ alias acls='history -c; clear'
 alias list='ls -lACF'
 
 # home directory #
-alias ~='cd ~'
+alias ~='cd $HOME'
 
 # better system commands #
 if [ "$(lsb_release -si)" = "Debian" ]; then
@@ -29,11 +29,6 @@ alias mv='mv -i'
 alias cp='cp -i'
 alias rm='rm -I'
 
-# commands with sudo #
-
-# kde commands #
-alias plasmareset='killall plasmashell; kstart plasmashell'
-
 # script commands #
 alias start_frontcam='/bin/sh ~/.local/bin/front_cam.sh'
 alias start_backcam='/bin/sh ~/.local/bin/back_cam.sh'
@@ -54,6 +49,6 @@ up () {
 
 	# perform cd. Show error if cd fails
 	if ! cd "$d"; then
-		echo "Konnte nicht $limit Verzeichnisse hochgehen.";
+		echo "Kann nicht $limit Verzeichnisse hochgehen.";
 	fi
 }
