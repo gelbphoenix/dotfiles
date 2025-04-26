@@ -23,6 +23,7 @@ fi
 
 alias mkdir='mkdir -pv'
 alias rmdir='rm -rdv'
+alias ping='ping -c 5'
 
 # confirmations #
 alias mv='mv -i'
