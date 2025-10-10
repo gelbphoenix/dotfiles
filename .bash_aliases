@@ -25,6 +25,10 @@ alias mkdir='mkdir -pv'
 alias rmdir='rm -rdv'
 alias ping='ping -c 5'
 
+if [ -x "$(command -v rg)" ]; then
+	alias grep='rg'
+fi
+
 # confirmations #
 alias mv='mv -i'
 alias cp='cp -i'
