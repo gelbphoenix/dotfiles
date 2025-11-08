@@ -57,3 +57,6 @@ up () {
 		echo "Kann nicht $limit Verzeichnisse hochgehen.";
 	fi
 }
+
+### Custom aliases ###
+alias fj='fj --host git.gelbphoenix.de'
