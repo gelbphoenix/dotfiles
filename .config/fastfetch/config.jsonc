@@ -41,12 +41,12 @@
     {
       "type": "cpu",
       "key": "󰍛 ",
-      "keyColor": "38;2;255;128;0"
+      "keyColor": "38;2;255;140;0"
     },
     {
       "type": "gpu",
       "key": "󰍛 ",
-      "keyColor": "38;2;255;128;0",
+      "keyColor": "38;2;255;140;0",
       "format": "{vendor} {name}"
     },
     "break",
