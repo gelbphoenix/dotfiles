@@ -30,7 +30,7 @@ if [ -x "$(command -v rg)" ]; then
 fi
 
 if [ -x "$(command -v pwgen)" ]; then
-	alias pwgen_sec="pwgen -cnysB 20"
+	alias pwgen_sec="pwgen -cnysB1 20"
 fi
 
 # confirmations #
