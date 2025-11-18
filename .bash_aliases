@@ -29,6 +29,10 @@ if [ -x "$(command -v rg)" ]; then
 	alias grep='rg'
 fi
 
+if [ -x "$(command -v pwgen)" ]; then
+	alias pwgen_sec="pwgen -cnysB 20"
+fi
+
 # confirmations #
 alias mv='mv -i'
 alias cp='cp -i'
