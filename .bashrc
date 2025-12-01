@@ -85,7 +85,7 @@ fi
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 [ -f $HOME/.bash_aliases ] && \. $HOME/.bash_aliases
-[ -f $HOME/.git-prompt ] && \. $HOME/.git-prompt
+[ -f $HOME/.config/git/prompt ] && \. $HOME/.config/git/prompt
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
