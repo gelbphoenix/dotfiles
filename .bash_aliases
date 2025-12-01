@@ -64,3 +64,4 @@ up () {
 
 ### Custom aliases ###
 alias fj='fj --host git.gelbphoenix.de'
+alias neowofetch='fastfetch'
