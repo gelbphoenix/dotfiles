@@ -11,7 +11,7 @@ alias ~='cd $HOME'
 
 # better system commands #
 if [ "$(lsb_release -si)" = "Debian" ]; then
-	if [ -x "$(command -v nala)" ]; then
+	if command -v nala >/dev/null; then
 		alias apt='sudo nala'
 	else
 		alias apt='sudo apt'
@@ -25,11 +25,11 @@ alias mkdir='mkdir -pv'
 alias rmdir='rm -rdv'
 alias ping='ping -c 5'
 
-if [ -x "$(command -v rg)" ]; then
+if command -v rg >/dev/null; then
 	alias grep='rg'
 fi
 
-if [ -x "$(command -v pwgen)" ]; then
+if command -v pwgen >/dev/null; then
 	alias pwgen_sec="pwgen -cnysB1 20"
 fi
 
@@ -61,6 +61,22 @@ up () {
 		echo "Kann nicht $limit Verzeichnisse hochgehen.";
 	fi
 }
+
+check_script() {
+    local url="$1"
+
+    if command -v vim >/dev/null; then
+        vim <(curl -fsSL "$url")
+    elif command -v nano >/dev/null; then
+        nano <(curl -fsSL "$url")
+    elif command -v less >/dev/null; then
+        less <(curl -fsSL "$url")
+    else
+        echo "Cannot check script" >&2
+        return 1
+    fi
+}
+
 
 ### Custom aliases ###
 alias fj='fj --host git.gelbphoenix.de'
